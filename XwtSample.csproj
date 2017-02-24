@@ -4,10 +4,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{1E14AA22-C2B2-4A0D-9539-6EADAB1A193F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>XwtSample</RootNamespace>
     <AssemblyName>XwtSample</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,10 +30,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="Xwt">
+      <HintPath>packages\Xwt.0.2.5\lib\net40\Xwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Xwt.XamMac">
+      <HintPath>packages\Xwt.XamMac.0.2.5\lib\net40\Xwt.XamMac.dll</HintPath>
+    </Reference>
+    <Reference Include="Xwt.WPF">
+      <HintPath>packages\Xwt.WPF.0.2.5\lib\net40\Xwt.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Mac">
+      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Mac.framework\Versions\3.0.0.367\lib\i386\full\Xamarin.Mac.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
