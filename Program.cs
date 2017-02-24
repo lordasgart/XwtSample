@@ -3,24 +3,29 @@ using Xwt;
 
 namespace XwtSample
 {
-	class MainClass
-	{
-		public static void Main(string[] args)
-		{
-			ObjCRuntime.Dlfcn.dlopen("/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/libxammac.dylib", 0);
+    class MainClass
+    {
+        [STAThread]
+        public static void Main(string[] args)
+        {
+                
+#if __MonoCS__
+            ObjCRuntime.Dlfcn.dlopen("/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/libxammac.dylib", 0);
+            Application.Initialize(ToolkitType.XamMac);
+#else
+            Application.Initialize(ToolkitType.Wpf);
+#endif
 
-			Application.Initialize(ToolkitType.XamMac);
+            var mainWindow = new Window()
+            {
+                Title = "XwtSample",
+                Width = 400,
+                Height = 300
+            };
 
-			var mainWindow = new Window()
-			{
-				Title = "XwtSample",
-				Width = 400,
-				Height = 300
-			};
+            mainWindow.Show();
 
-			mainWindow.Show();
-
-			Application.Run();
-		}
-	}
+            Application.Run();
+        }
+    }
 }
