@@ -40,7 +40,7 @@
       <HintPath>packages\Xwt.WPF.0.2.5\lib\net40\Xwt.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Mac">
-      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Mac.framework\Versions\3.0.0.367\lib\i386\full\Xamarin.Mac.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Mac.framework\Versions\Current\lib\i386\full\Xamarin.Mac.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
