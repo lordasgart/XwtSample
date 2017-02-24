@@ -1,5 +1,7 @@
 # XwtSample
 
+Switches via compiler directive between Xwt.XamMac and Xwt.Wpf
+
 # MacOS
 
 The clue is to add the NuGet packages to Xwt.XamMac
@@ -10,8 +12,12 @@ your local Xamarin.Mac.dll (be careful to take the correct architecture of your 
 
 usually something like
 
-/Library/Frameworks/Xamarin.Mac.framework/Versions/3.0.0.367/lib/i386/full/Xamarin.Mac.dll.
+/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/i386/full/Xamarin.Mac.dll.
 
 and you need to actively load the libxammac.dylib
 
 ObjCRuntime.Dlfcn.dlopen("/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/libxammac.dylib", 0);
+
+# Windows
+
+Add Xwt.Wpf NuGet package
